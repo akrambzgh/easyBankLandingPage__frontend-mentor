@@ -1,0 +1,70 @@
+.footer {
+  padding-top: $sectionPadding;
+  padding-bottom: $sectionPadding;
+  background-color: $DarkBlue;
+  @media (max-width: 991px) {
+    & {
+      text-align: center;
+    }
+  }
+  &__grid {
+    // @include gridColumn4();
+    @include Flex(center, center);
+    @media (min-width: 992px) {
+      & {
+        @include Flex(space-between, center);
+      }
+    }
+    gap: 20px;
+    @media (max-width: 991px) {
+      & {
+        flex-direction: column;
+      }
+    }
+  }
+  &__item {
+    .logo {
+      display: block;
+      margin-bottom: 15px;
+      img {
+        background-color: $White;
+        padding: 15px;
+      }
+    }
+    .social__list {
+      @include Flex(space-between, center);
+      li {
+        padding: 0 10px;
+        font-size: $titleFont;
+        color: $White;
+        text-align: center;
+      }
+    }
+    .links {
+      @include Flex(space-between, center);
+      flex-direction: row;
+      @media (max-width: 991px) {
+        & {
+          flex-direction: column;
+        }
+      }
+
+      li a {
+        color: $White;
+        font-size: $mainFont;
+        display: block;
+        padding: 15px;
+      }
+    }
+    button {
+      display: block;
+      margin: 0 auto 15px auto;
+    }
+    span {
+      color: $GrayishBlue;
+      font-size: $titleFont;
+      display: block;
+      text-align: center;
+    }
+  }
+}

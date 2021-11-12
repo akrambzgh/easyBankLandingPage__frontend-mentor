@@ -1,0 +1,62 @@
+.hero {
+  @media (min-width: 992px) {
+    & {
+      display: flex;
+      align-items: center;
+      flex-direction: row-reverse;
+      overflow: hidden;
+    }
+  }
+  &__img {
+    position: relative;
+    @include impSetings("/images/bg-intro-mobile.svg", center center, cover);
+    min-height: 280px;
+    max-height: 100%;
+    @media (min-width: 992px) {
+      & {
+        flex: 1;
+        height: 655px;
+        @include impSetings(
+          "/images/bg-intro-desktop.svg",
+          center center,
+          cover
+        );
+      }
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      @include impSetings("/images/image-mockups.png", center bottom, 93%);
+      @media (min-width: 992px) {
+        & {
+          right: -20%;
+        }
+      }
+    }
+  }
+  &__text {
+    padding-top: $sectionPadding;
+    padding-bottom: $sectionPadding;
+    text-align: center;
+    @media (min-width: 992px) {
+      & {
+        flex: 1;
+        text-align: left;
+      }
+    }
+    h1 {
+      color: $DarkBlue;
+      font-size: $hFont;
+      font-weight: map-get($fontsWeight, "titleFont");
+      margin-bottom: 25px;
+    }
+    p {
+      font-size: $pSize;
+      font-weight: map-get($fontsWeight, "pFont");
+      color: $GrayishBlue;
+      margin-bottom: 40px;
+    }
+  }
+}

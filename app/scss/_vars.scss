@@ -1,0 +1,37 @@
+// Colors
+
+// Primary
+
+$DarkBlue: hsl(233, 26%, 24%);
+$LimeGreen: hsl(136, 65%, 51%);
+$BrightCyan: hsl(192, 70%, 51%);
+$White: hsl(0, 0%, 100%);
+
+// Neutral
+
+$GrayishBlue: hsl(233, 8%, 62%);
+$LightGrayisBlue: hsl(220, 16%, 96%);
+$VeryLighGray: hsl(0, 0%, 98%);
+
+// fonts
+$mainFont: 16px;
+
+$hFont: $mainFont + 17px;
+$titleFont: 18px;
+$pSize: $mainFont;
+$buttonFont: $mainFont;
+$linkFont: $mainFont - 4;
+
+$fontsWeight: (
+  "h1HeadFont": 700,
+  "pFont": 400,
+  "titleFont": 400,
+  "lighFont": 300,
+  "btnFont": 700,
+);
+
+// transition
+$mainTransition: 0.3s;
+
+// padding
+$sectionPadding: 60px;

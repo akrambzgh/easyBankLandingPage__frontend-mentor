@@ -1,0 +1,23 @@
+@mixin gridColumn4 {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+@mixin Flex($jc, $ai) {
+  display: flex;
+  justify-content: $jc;
+  align-items: $ai;
+}
+
+@mixin centerY() {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@mixin impSetings($myImg, $position, $size) {
+  background-image: url($myImg);
+  background-size: $size;
+  background-repeat: no-repeat;
+  background-position: $position;
+}

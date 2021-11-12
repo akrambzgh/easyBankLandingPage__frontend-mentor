@@ -1,0 +1,124 @@
+.header {
+  background-color: $White;
+  position: relative;
+  z-index: 3;
+  @media (max-width: 991px) {
+    & {
+      padding: 15px 0;
+    }
+  }
+  @media (min-width: 992px) {
+    & {
+      box-shadow: 0 5px 50px 5px $GrayishBlue;
+    }
+  }
+  nav {
+    @include Flex(space-between, center);
+    padding-left: 25px;
+    padding-right: 25px;
+    a.logo img {
+      min-height: 20px;
+    }
+    .links {
+      @media (max-width: 991px) {
+        &:hover .head-list {
+          display: flex;
+          flex-direction: column;
+          opacity: 1;
+          position: absolute;
+          @include centerY();
+          top: 100%;
+          width: 90%;
+          margin: 15px 0;
+          background-color: $White;
+          border-radius: 15px;
+          box-shadow: 0 20px 40px 10px $GrayishBlue;
+        }
+        &:hover .line {
+          transition: $mainTransition;
+          &-1 {
+            transform: rotate(45deg);
+          }
+          &-2 {
+            opacity: 0;
+          }
+          &-3 {
+            transform: rotate(-45deg);
+          }
+        }
+      }
+
+      .hubergur {
+        width: 30px;
+        @media (min-width: 992px) {
+          & {
+            display: none;
+          }
+        }
+        span {
+          width: 100%;
+          height: 1px;
+          display: block;
+          margin: 5px;
+          background-color: $GrayishBlue;
+          transform-origin: 7px 0px;
+        }
+      }
+    }
+    .head-list {
+      display: flex;
+      overflow: hidden;
+      @media (max-width: 991px) {
+        & {
+          display: none;
+          opacity: 0;
+          width: 100%;
+        }
+      }
+      li {
+        position: relative;
+        transition: 0.3s;
+        @media (max-width: 991px) {
+          & {
+            width: 100%;
+            text-align: center;
+          }
+        }
+        &::after {
+          content: "";
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          width: 0%;
+          height: 3px;
+          background: linear-gradient(to right, $LimeGreen, $BrightCyan);
+          transition: $mainTransition;
+          @media (max-width: 991px) {
+            @include centerY();
+          }
+        }
+        &:hover::after {
+          width: 100%;
+        }
+        a {
+          display: block;
+          padding: 20px 18px;
+          color: $GrayishBlue;
+          text-decoration: none;
+          font-weight: map-get($fontsWeight, "titleFont");
+          @media (max-width: 991px) {
+            & {
+              padding-top: 20px;
+              padding-bottom: 20px;
+            }
+          }
+        }
+      }
+    }
+    .button-section {
+      @media (max-width: 991px) {
+        display: none;
+      }
+    }
+  }
+}
